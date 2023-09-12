@@ -12,7 +12,7 @@ spec:
     versionSelection:
       constraints: ">=0.13.6"
       prereleases: {}
-  serviceAccountName: sync-sa
+  serviceAccountName: tap-installer-sa
   values:
   - secretRef:
       name: ootb-testing-scanning-supply-chain-values
