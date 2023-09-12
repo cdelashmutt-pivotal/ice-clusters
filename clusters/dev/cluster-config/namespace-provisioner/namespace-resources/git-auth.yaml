@@ -8,6 +8,6 @@ metadata:
   annotations:
     tekton.dev/git-0: #@ data.values.imported.git.host
 type: kubernetes.io/basic-auth
-stringData:
+data:
   username: #@ base64.encode(data.values.imported.git.username)
   password: #@ base64.encode(data.values.imported.git.token)
