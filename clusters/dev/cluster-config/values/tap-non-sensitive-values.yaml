@@ -88,13 +88,16 @@ tap_install:
               target: https://github.com/Tanzu-Solutions-Engineering/waas-tap-gui-catalog/blob/main/catalog-info.yaml
             - type: url
               target: https://github.com/tanzu-end-to-end/tap-workshop/blob/main/install/backstage/catalog-info.yaml
+
     metadata_store:
       ns_for_export_app_cert: "*"
       app_service_type: ClusterIP
+
     appliveview_connector:
       backend:
         host: appliveview.dev.h2o.grogscave.net
         ingressEnabled: true
+
     namespace_provisioner:
       controller: false
       gitops_install:
@@ -107,3 +110,14 @@ tap_install:
             subPath: clusters/dev/cluster-config/namespace-provisioner/namespace-resources
             url: https://github.com/cdelashmutt-pivotal/ice-clusters
           path: _ytt_lib/namespace-resources
+
+    local_source_proxy:
+      repository: gcr.io/pa-cdelashmutt/tap-h2o/lsp
+      push_secret:
+        name: kp-default-repository-secret
+        namespace: build-service
+        create_export: true
+      pull_secret:
+        name: kp-default-repository-secret
+        namespace: build-service
+        create_export: true
