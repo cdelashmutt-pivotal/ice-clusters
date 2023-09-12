@@ -23,7 +23,7 @@ metadata:
   name: ootb-testing-scanning-supply-chain-values
   namespace: tap-install
 type: Opaque
-data:
+stringData:
   values.yml: |                                                                                                                                                                
     registry:                                                                                                                                                                  
       server: gcr.io
