@@ -3,3 +3,4 @@
 namespaces:
   - name: dev
   - name: qa
+    pipeline: java
