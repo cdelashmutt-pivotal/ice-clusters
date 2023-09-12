@@ -11,8 +11,8 @@ tap_install:
                     providers:
                         github:
                             development:
-                                clientId: ENC[AES256_GCM,data:FOLuB833DsWJTfMkiA3+DB8JBaA=,iv:KoKLhFtRnA39mVTKanqUbQnbJcw7PFibKPNg2zi0rkc=,tag:nRqHWnlIUJ1gPHvNuvzEOQ==,type:str]
-                                clientSecret: ENC[AES256_GCM,data:35WM4zXI7QDsp2JuYjbnjnxl3AlIPBfMEyp5xDPRqJkdBlY7Srzbcg==,iv:44pbn/OWLAFc6+34tungOCDDO3d+yqjMhXlxPfTGer8=,tag:4bhOMLB+BjfZTd/kzMstsg==,type:str]
+                                clientId: ENC[AES256_GCM,data:81/NwiTAkMQH1iaYYEOO1zSCCOg=,iv:sOAm4A/olGFbadHtSem+QE8zL23m2BLS0zRsFPsN85A=,tag:L5U22f7vAhk5adj0aWMfkw==,type:str]
+                                clientSecret: ENC[AES256_GCM,data:gTBnsP1o6FiV7UV3netDu5LCTAiOrDlYQzfqMJt0ljPNcq9QJpOvAA==,iv:1cmBUld64TH46RXPIPjQyZvXb673JG4i8s4sv1HEodg=,tag:hQ8rYDVtT2ses8fE7jfKeg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -28,8 +28,8 @@ sops:
             dCttSWh5MmEweDIrcHZLR0ZzRGZiOEUKXnNUhRHtxx/JS4um5MUR5g60wCZMMBko
             AmicWaXSEgg3FU6yRX3zR/fcB0thJ65xOXTEIXHtTeNKdorxR8uCmw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-09-12T15:17:39Z"
-    mac: ENC[AES256_GCM,data:4LZDse3mb6mQARjPqA6SWZ7Oa76A1ERJ0KruqbFMBFTOYBfTzqot57sbyjBAw7XMUFINRoo6jYB3HLooPbB2RmrsW7sb/nl19TBz/hHjpsBXHuM6kq49xQnsggKz2lkiTynTOtTfzK9VXqhGZa2AlCUIuFVAb0Ke6Eti5EaRllY=,iv:LeKTrhiY0kXLQ+ioci8o3sPeXdEhhwFGhE6KwjQHZzo=,tag:PmdF9xRlsTNLvcpyiuBqng==,type:str]
+    lastmodified: "2023-09-12T17:13:56Z"
+    mac: ENC[AES256_GCM,data:jmQI3QgPqsNPAhBtuIrMjGPlOZWsQoCucb5fMk++nzGo0Ote1qdMqI36CVTYSB/6GSlWk52XOPlftL6JSbCTVeM8IW+b0yHL8LqdyWWHVXKwMx7RxJR2novMXet5iqvdVHi4JpWmh1kM6QlFo20HkEKQg+BHm9tF/r7QqCqOUx0=,iv:jyLL3ukpEiXxG3lGzw9R1lqQAk6TA5UbS8+XUHS6fs0=,tag:d9WcxY2EdfLn37Xm2GnOSQ==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.7.3
