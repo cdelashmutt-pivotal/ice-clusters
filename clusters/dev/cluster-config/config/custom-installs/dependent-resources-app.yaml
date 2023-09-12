@@ -1,0 +1,22 @@
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: dependent-resources
+  namespace: tanzu-sync
+  annotations:
+    kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
+    kapp.k14s.io/change-rule.1: "delete before deleting pkgi"
+spec:
+  serviceAccountName: sync-sa
+  fetch:
+    - git:
+        ref: origin/main
+        url: https://github.com/cdelashmutt-pivotal/ice-clusters
+        subPath: clusters/dev/cluster-config/dependent-resources
+  template:
+    - ytt:
+        valuesFrom:
+        - secretRef:
+            name: dependent-resource-values
+  deploy:
+    - kapp: {}

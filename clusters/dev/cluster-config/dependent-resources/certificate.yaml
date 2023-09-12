@@ -1,0 +1,49 @@
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-contour-cluster-issuer
+spec:
+  acme:
+    email: cdelashmutt@vmware.com
+    privateKeySecretRef:
+      name: acme-account-key
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+    - http01:
+        ingress:
+          class: contour
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: default-cert
+  namespace: default
+spec:
+  commonName: "*.dev.h2o.grogscave.net"
+  dnsNames:
+    - "*.dev.h2o.grogscave.net"
+  duration: 2160h0m0s
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-contour-cluster-issuer
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 2048
+  renewBefore: 360h0m0s
+  secretName: tls
+  subject:
+    organizations:
+      - vmware
+---
+apiVersion: projectcontour.io/v1
+kind: TLSCertificateDelegation
+metadata:
+  name: default-cert
+  namespace: default
+spec:
+  delegations:
+    - secretName: tls
+      targetNamespaces:
+        - "*"
