@@ -60,6 +60,9 @@ tap_install:
         replicas: 3
       infrastructure_provider: aws
       envoy:
+        service:
+          annotations:
+            external-dns.alpha.kubernetes.io/hostname: '*.dev.h2o.grogscave.net'      
         workload:
           type: Deployment
           replicas: 3
