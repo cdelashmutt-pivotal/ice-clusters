@@ -107,7 +107,3 @@ tap_install:
             subPath: clusters/dev/cluster-config/namespace-provisioner/namespace-resources
             url: https://github.com/cdelashmutt-pivotal/ice-clusters
           path: _ytt_lib/namespace-resources
-#!    package_overlays:
-#!    - name: cert-manager
-#!      secrets:
-#!      - name: cert-manager-overlay
