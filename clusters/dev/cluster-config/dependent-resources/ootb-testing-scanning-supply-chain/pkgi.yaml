@@ -52,6 +52,7 @@ stringData:
     #@overlay/match by=overlay.subset({"kind": "ClusterSupplyChain"}),expects=2
     ---
     spec:
+      #@overlay/match missing_ok=True
       selector:
         #@overlay/match missing_ok=True
         apps.ice.com/prod: "true"
