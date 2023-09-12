@@ -2,7 +2,7 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
-  name: ootb-basic-supply-chain
+  name: ootb-supply-chain-basic
   namespace: tap-install
 spec:
   packageRef:
@@ -13,12 +13,12 @@ spec:
   serviceAccountName: tap-installer-sa
   values:
   - secretRef:
-      name: ootb-basic-supply-chain-values
+      name: ootb-supply-chain-basic-values
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: ootb-basic-supply-chain-values
+  name: ootb-supply-chain-basic-values
   namespace: tap-install
 type: Opaque
 stringData:
