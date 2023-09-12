@@ -14,7 +14,7 @@ spec:
       name: acme-account-key
     server: https://acme-v02.api.letsencrypt.org/directory
     solvers:
-    - http01:
+    - dns01:
         route53:
           region: us-east-2
           accessKeyIDSecretRef:
