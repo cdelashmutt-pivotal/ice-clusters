@@ -1,0 +1,10 @@
+apiVersion: accelerator.apps.tanzu.vmware.com/v1alpha1
+kind: Accelerator
+metadata:
+  name: simple-java-web-app
+  namespace: accelerator-system
+spec:
+  git:
+    url: https://github.com/cdelashmutt-pivotal/simple-java-web-app-accel
+    ref:
+      branch: main
