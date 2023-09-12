@@ -1,0 +1,109 @@
+---
+tap_install:
+  values:
+    profile: full
+    excluded_packages:
+    - learningcenter.tanzu.vmware.com
+    - workshops.learningcenter.tanzu.vmware.com
+    - policy.apps.tanzu.vmware.com
+    ceip_policy_disclosed: true
+    shared:
+      ingress_domain: "dev.h2o.grogscave.net"
+      ingress_issuer: ""
+      image_registry:
+        project_path: "gcr.io/pa-cdelashmutt/tap-h2o/supply-chain"
+      kubernetes_version: "1.25.7"
+    supply_chain: basic
+
+    accelerator:
+      ingress:
+        include: true
+        enable_tls: true
+      tls:
+        namespace: default
+        secret_name: default-cert
+
+    appliveview_connector:
+      activateAppLiveViewSecureAccessControl: false
+      activateSensitiveOperations: true
+
+    cartographer:
+      cartographer:
+        concurrency:
+          max_deliveries: 10
+          max_runnables: 10
+          max_workloads: 10
+        resources:
+          limits:
+            cpu: "3"
+            memory: 10Gi
+          requests:
+            cpu: 1.5
+            memory: 10Gi
+      conventions:
+        resources:
+          limits:
+            memory: 600Mi
+    cnrs:
+      default_tls_secret: default/default-cert
+      domain_template: "{{- .Name}}-{{.Namespace -}}.{{.Domain}}"
+      ingress:
+        external:
+          namespace: tanzu-system-ingress
+        internal:
+          namespace: tanzu-system-ingress
+    contour:
+      contour:
+        replicas: 3
+      infrastructure_provider: aws
+      envoy:
+        workload:
+          type: Deployment
+          replicas: 3
+    scanning:
+      resources:
+        limits:
+          cpu: "500m"
+          memory: 3Gi
+        requests:
+          cpu: 200m
+          memory: 1Gi
+          
+    tap_gui:
+      service_type: ClusterIP
+      ingressEnabled: "true"
+      tls:
+        namespace: default
+        secretName: default-cert
+      app_config:
+        app:
+          baseUrl: https://tap-gui.workshop.amer.end2end.link
+        catalog:
+          locations:
+            - type: url
+              target: https://github.com/Tanzu-Solutions-Engineering/waas-tap-gui-catalog/blob/main/catalog-info.yaml
+            - type: url
+              target: https://github.com/tanzu-end-to-end/tap-workshop/blob/main/install/backstage/catalog-info.yaml
+    metadata_store:
+      ns_for_export_app_cert: "*"
+      app_service_type: ClusterIP
+    appliveview_connector:
+      backend:
+        host: appliveview.dev.h2o.grogscave.net
+        ingressEnabled: true
+    namespace_provisioner:
+      controller: false
+      gitops_install:
+        ref: origin/main
+        subPath: clusters/dev/cluster-config/namespace-provisioner/namespaces
+        url: https://github.com/cdelashmutt-pivotal/ice-clusters
+      additional_sources:
+        - git:
+            ref: origin/main
+            subPath: clusters/dev/cluster-config/namespace-provisioner/namespace-resources
+            url: https://github.com/cdelashmutt-pivotal/ice-clusters
+          path: _ytt_lib/namespace-resources
+#!    package_overlays:
+#!    - name: cert-manager
+#!      secrets:
+#!      - name: cert-manager-overlay
