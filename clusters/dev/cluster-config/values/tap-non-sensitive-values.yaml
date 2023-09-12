@@ -129,6 +129,14 @@ tap_install:
             subPath: clusters/dev/cluster-config/namespace-provisioner/namespace-resources
             url: https://github.com/cdelashmutt-pivotal/ice-clusters
           path: _ytt_lib/namespace-resources
+      import_data_values_secrets:
+        - name: workload-git-auth
+          namespace: tap-install
+          create_export: true
+      default_parameters:
+        supply_chain_service_account:
+          secrets:
+          - git
 
     local_source_proxy:
       repository: gcr.io/pa-cdelashmutt/tap-h2o/lsp
