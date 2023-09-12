@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: qa-app-sa
+  namespace: qa
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: qa-app-sa-cluster-admin
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: qa-app-sa-cluster-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: qa-app-sa-cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: qa-app-sa
+    namespace: qa
+---
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: workloads
+  namespace: qa
+spec:
+  serviceAccountName: qa-app-sa
+  fetch:
+    - git:
+        ref: origin/main
+        url: https://github.com/cdelashmutt-pivotal/ice-demo-gitops
+  template:
+    - ytt: {}
+  deploy:
+    - kapp:
+      rawOptions: [--dangerous-allow-empty-list-of-resources]
