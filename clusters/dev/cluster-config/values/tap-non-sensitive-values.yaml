@@ -31,9 +31,10 @@ tap_install:
         repository_owner: cdelashmutt-pivotal
         repository_name: ice-demo-gitops
         commit_strategy: pull_request
+        branch: main
         pull_request:
           server_kind: github
-          commit_branch: main
+          commit_branch: ""
           pull_request_title: Delivery from sandbox Supply Chain
           pull_request_body: This is a candidate release for promotion
 
