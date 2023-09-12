@@ -19,18 +19,16 @@ spec:
           region: us-east-2
           accessKeyIDSecretRef:
             name: prod-route53-credentials-secret
-            namespace: tanzu-sync
             key: access-key-id
           secretAccessKeySecretRef:
             name: prod-route53-credentials-secret
-            namespace: tanzu-sync
             key: secret-access-key
 ---
 apiVersion: v1
 kind: Secret
 metadata:
   name: prod-route53-credentials-secret
-  namespace: tanzu-sync
+  namespace: cert-manager
 type: Opaque
 data:
   access-key-id: #@ base64.encode(data.values.aws.route53.accesskey)
