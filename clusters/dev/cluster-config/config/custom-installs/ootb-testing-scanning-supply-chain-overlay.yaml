@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ootb-testing-scanning-supply-chain-overlay
+  namespace: tap-install
+type: Opaque
+stringData:
+  overlay.yaml: |
+    #@ load("@ytt:overlay", "overlay")
+    #@overlay/match by=overlay.subset({"kind": "ClusterSupplyChain"}),expects=2
+    ---
+    spec:
+      #@overlay/match missing_ok=True
+      selector:
+        #@overlay/match missing_ok=True
+        apps.ice.com/prod: "true"

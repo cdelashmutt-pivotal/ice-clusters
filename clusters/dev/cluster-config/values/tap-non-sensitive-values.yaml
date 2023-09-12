@@ -9,6 +9,12 @@ tap_install:
     - learningcenter.tanzu.vmware.com
     - workshops.learningcenter.tanzu.vmware.com
     - policy.apps.tanzu.vmware.com
+
+    package_overlays:
+    - name: ootb-supply-chain-testing-scanning
+      secrets:
+      - name: ootb-testing-scanning-supply-chain-overlay
+
     ceip_policy_disclosed: true
     shared:
       ingress_domain: "dev.h2o.grogscave.net"
@@ -16,7 +22,20 @@ tap_install:
       image_registry:
         project_path: "gcr.io/pa-cdelashmutt/tap-h2o/supply-chain"
       kubernetes_version: "1.25.7"
-    supply_chain: basic
+    supply_chain: testing_scanning
+
+    ootb_supply_chain_testing_scanning:
+      external_delivery: false
+      gitops:
+        server_address: https://github.com
+        repository_owner: cdelashmutt-pivotal
+        repository_name: ice-demo-gitops
+        commit_strategy: pull_request
+        pull_request:
+          server_kind: github
+          commit_branch: supply_chain
+          pull_request_title: Delivery from sandbox Supply Chain
+          pull_request_body: This is a candidate release for promotion
 
     accelerator:
       ingress:

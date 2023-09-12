@@ -1,0 +1,29 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: ootb-basic-supply-chain
+  namespace: tap-install
+spec:
+  packageRef:
+    refName: ootb-supply-chain-basic.tanzu.vmware.com
+    versionSelection:
+      constraints: ">=0.13.6"
+      prereleases: {}
+  serviceAccountName: tap-installer-sa
+  values:
+  - secretRef:
+      name: ootb-basic-supply-chain-values
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ootb-basic-supply-chain-values
+  namespace: tap-install
+type: Opaque
+stringData:
+  values.yml: |                                                                                                                                                                
+    registry:                                                                                                                                                                  
+      server: gcr.io
+      repository: pa-cdelashmutt/tap-h2o/supply-chain/workloads
+    external_delivery: false
