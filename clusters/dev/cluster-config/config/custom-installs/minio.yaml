@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: minio-values
+  namespace: tanzu-sync
+type: Opaque
+stringData:
+  values.yaml: |
+    statefulset:
+      replicaCount: 1
+---
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: minio
+  namespace: tanzu-sync
+spec:
+  serviceAccountName: sync-sa
+  fetch:
+    - helmChart:
+        name: minio
+        version: 5.0.13
+        repository:
+          url: oci://registry-1.docker.io/bitnamicharts/minio
+  template:
+    - helmTemplate:
+        namespace: minio
+        valuesFrom:
+        - secretRef:
+            name: minio-values
+  deploy:
+    - kapp: {}
