@@ -105,10 +105,21 @@ tap_install:
         catalog:
           locations:
             - type: url
-              target: https://github.com/Tanzu-Solutions-Engineering/waas-tap-gui-catalog/blob/main/catalog-info.yaml
+              target: https://github.com/cdelashmutt-pivotal/ice-clusters/blob/main/catalog/catalog-info.yaml
             - type: url
               target: https://github.com/tanzu-end-to-end/tap-workshop/blob/main/install/backstage/catalog-info.yaml
-
+        customize:
+          default_route: '/docs/default/component/getting-started'
+        techdocs:
+          builder: 'external'
+          publisher:
+            type: 'awsS3'
+            awsS3:
+              bucketName: 'techdocs-storage'
+              accountId: minio
+              region: us-east-1
+              endpoint: http://minio.minio:9000
+              s3ForcePathStyle: true
     metadata_store:
       ns_for_export_app_cert: "*"
       app_service_type: ClusterIP

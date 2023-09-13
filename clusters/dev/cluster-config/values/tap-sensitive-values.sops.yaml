@@ -12,6 +12,11 @@ tap_install:
                             development:
                                 clientId: ENC[AES256_GCM,data:81/NwiTAkMQH1iaYYEOO1zSCCOg=,iv:sOAm4A/olGFbadHtSem+QE8zL23m2BLS0zRsFPsN85A=,tag:L5U22f7vAhk5adj0aWMfkw==,type:str]
                                 clientSecret: ENC[AES256_GCM,data:gTBnsP1o6FiV7UV3netDu5LCTAiOrDlYQzfqMJt0ljPNcq9QJpOvAA==,iv:1cmBUld64TH46RXPIPjQyZvXb673JG4i8s4sv1HEodg=,tag:hQ8rYDVtT2ses8fE7jfKeg==,type:str]
+                aws:
+                    accounts:
+                        - accountId: ENC[AES256_GCM,data:dH2MbCY=,iv:IFdpAvJNf6ruvoW1D59KtNYa9vg3SpsuAG7B9MbE4FA=,tag:dQUfcoTGF1gqIk48LTzdAQ==,type:str]
+                          accessKeyId: ENC[AES256_GCM,data:3xY4K3M=,iv:Ym21pucDtGeVnk2KK59kfddkxlaiqgueb/XZgo6UhF0=,tag:oJNc3WRQRWIh1zCi4tXxnA==,type:str]
+                          secretAccessKey: ENC[AES256_GCM,data:7JoTHD2Bx/w=,iv:HTCEyiWG5rR2n9/SnpSdkByFH597bPCNPxjm3vLbldA=,tag:V7hAODTQC3J6BwJ3qaa8ZQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -27,8 +32,8 @@ sops:
             dCttSWh5MmEweDIrcHZLR0ZzRGZiOEUKXnNUhRHtxx/JS4um5MUR5g60wCZMMBko
             AmicWaXSEgg3FU6yRX3zR/fcB0thJ65xOXTEIXHtTeNKdorxR8uCmw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-09-12T17:37:04Z"
-    mac: ENC[AES256_GCM,data:m3pCLkKN83Euu4TiWbRJBPYjHfYJxKlTWlUuGZjDtZB/xqrNaF4JxPCDAlhogUpJu41VnHo+lSamA2RqAPznVhoHZt3YbusV9e8U4m83gGmObOqszi/IzJlSAiEWP70vOAz1E377Qr9q7InMqS60Sz6zDEMZ60z1zqCl4eaTRVM=,iv:DeVUVI+z+TrUE2nv2fc2DoiTNWRtvGZApJsZ8uN4ZBI=,tag:f7TTLiUTmjOGLbE93pVhsQ==,type:str]
+    lastmodified: "2023-09-13T12:30:02Z"
+    mac: ENC[AES256_GCM,data:jA/x3gzRqgzBQfLpIo46p0Atj2/Pju2DbCFEUPuASi+yUCRZd0ogvJBgcFQDSe+w9BZX47TICCH/6r9Yl0rmVBDJ9Nt5MJqZ6xnusJB6/YMyobwEbDYlUentZ2EvGWAdXlkfxIqoRB9gU9H8u5veU7oUsF+UmPJRWdfjsxPXjuE=,iv:2EAGYJrzDjUp5j05hzDYKpOy2qKnxWIEUPZl9Z1eeAQ=,tag:dS5nLsvALpzRKoecTU6MuA==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.7.3
