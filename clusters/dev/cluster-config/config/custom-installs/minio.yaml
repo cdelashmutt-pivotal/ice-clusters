@@ -18,10 +18,10 @@ spec:
   serviceAccountName: sync-sa
   fetch:
     - helmChart:
-        name: minio
+        name: bitnamicharts/minio
         version: 12.8.4
         repository:
-          url: oci://registry-1.docker.io/bitnamicharts/minio
+          url: oci://registry-1.docker.io
           secretRef:
             name: dockercreds
   template:
