@@ -122,6 +122,16 @@ tap_install:
               region: us-east-1
               endpoint: http://minio.minio:9000
               s3ForcePathStyle: true
+        kubernetes:
+          clusterLocatorMethods:
+          - type: 'config'
+            clusters:
+              - url: https://${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}
+                name: host
+                authProvider: serviceAccount
+                serviceAccountToken: ${KUBERNETES_SERVICE_ACCOUNT_TOKEN}
+                skipTLSVerify: true
+                skipMetricsLookup: false
     metadata_store:
       ns_for_export_app_cert: "*"
       app_service_type: ClusterIP
