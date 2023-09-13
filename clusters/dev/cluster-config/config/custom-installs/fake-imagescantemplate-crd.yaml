@@ -1,0 +1,42 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: imagevulnerabilityscans.app-scanning.apps.tanzu.vmware.com
+spec:
+  group: app-scanning.apps.tanzu.vmware.com
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+  names:
+    plural: imagevulnerabilityscans
+    singular: imagevulnerabilityscan
+    kind: ImageVulnerabilityScan
+  scope: Namespaced
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fake-query-imgvuln
+rules:
+  - apiGroups:
+      - 'app-scanning.apps.tanzu.vmware.com'
+    resources:
+      - 'imagevulnerabilityscans'
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tap-gui-fake-query-imgvuln
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: fake-query-imgvuln
+subjects:
+  - kind: ServiceAccount
+    name: tap-gui
+    namespace: tap-gui
