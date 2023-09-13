@@ -10,6 +10,12 @@ tap_install:
                     clusterLocatorMethods:
                         - type: ENC[AES256_GCM,data:jn21Ua1V,iv:fl1HvWRRsY8Jpo/a0zuX3LW7hrdoPvVeP6KCq06MGeY=,tag:+1g8igZb7+1c8ymObApFSg==,type:str]
                           clusters:
+                            - url: ENC[AES256_GCM,data:IjhRe0Dgp76oUl+DG1X9/od36BFwrV3JcpcmB5OHBdr7hwAMOQK8VTkID+NpfMgnXtKKfIMN4wwhFbUstg==,iv:L2MjnLsuAq8fSGZokPeVII7NmsUdMGxytwVkzJvQDYo=,tag:opNboFX6Y3EMt1zer6kWWA==,type:str]
+                              name: ENC[AES256_GCM,data:/iyJ0g==,iv:R2OeESDwENDNrbVufjL34/QmONZNAgPGeI8m86yO81s=,tag:SwH6aBp+X7hwvlzKi37/Tw==,type:str]
+                              authProvider: ENC[AES256_GCM,data:b3E8enNZ+nOTXL8cjHk=,iv:1N/zfT9B1yPGbR6SBwEU/B4j1XZKTbT2NZyUThT2mig=,tag:VKAeGuiFS+OFiWfGC6pLdQ==,type:str]
+                              serviceAccountToken: ENC[AES256_GCM,data:W5xZRjgd3V8LrxzDIoVPPtGxvQAQCOFX/oZhoKvqGwN62n0=,iv:1EkXy5jOLNLSDN75I1jXJ1QHoyNfSpgjbKL6hRvPm/U=,tag:gerhJ9XpsPl4m9DOnOMOnw==,type:str]
+                              skipTLSVerify: ENC[AES256_GCM,data:H4uL2g==,iv:G0RnjH2MP+kNRu3svsyfaXI9VCYO6ElqW3xdtG/Yl+Y=,tag:zew/WRZ6Un3ZueUHJfH49g==,type:bool]
+                              skipMetricsLookup: ENC[AES256_GCM,data:MWBXc5k=,iv:Wn1vVVLoXi2snSWURan56rQaSKHhaJnhYIdjVaGu0dE=,tag:mw/5EywsAo4jMvFFxnhIPA==,type:bool]
                             - url: ENC[AES256_GCM,data:ZX2Gd/gVm7Dfi479He6jDRZFHeWjpt4my1B1KeFEwYrBzemta9DnGr21bw==,iv:FOtFdCbCAAFlwVwVDMeHHfDBYgO7/YTa2JQrpAau3Ww=,tag:VImRUYAO5Xk9K3OvzBivNw==,type:str]
                               name: ENC[AES256_GCM,data:TnkeSg==,iv:AyIffqfHQf4kt+FZeAP3UUlaj8GJw47Ue9OxRuP9Y+w=,tag:Wf0Vo0iFj1uFdxhagjXw1Q==,type:str]
                               authProvider: ENC[AES256_GCM,data:b3E8enNZ+nOTXL8cjHk=,iv:1N/zfT9B1yPGbR6SBwEU/B4j1XZKTbT2NZyUThT2mig=,tag:VKAeGuiFS+OFiWfGC6pLdQ==,type:str]
@@ -42,8 +48,8 @@ sops:
             dCttSWh5MmEweDIrcHZLR0ZzRGZiOEUKXnNUhRHtxx/JS4um5MUR5g60wCZMMBko
             AmicWaXSEgg3FU6yRX3zR/fcB0thJ65xOXTEIXHtTeNKdorxR8uCmw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-09-13T17:49:37Z"
-    mac: ENC[AES256_GCM,data:GJ5jP0AVKNWxkIaSOjZ7RIAwO2AbEldOz7bt4vu3f4y+3POlGMBhN17L1qcbhxbMq/HSovJT70xBHymKzbAoV7+jhBty9QWzNIlnUmOudPhOXf/X9lc+TlH7EYP5BNzT7GBi2C7eymRVbBoa1XnD6ConvEGQ3AuwPmt/SKGOTQ8=,iv:7Re6eaGAN7VgImlK2LIR/ynlpA67bHSJ+hxtsIitZWk=,tag:SbMPexVwAEDVyKVPzYwk1g==,type:str]
+    lastmodified: "2023-09-13T17:54:11Z"
+    mac: ENC[AES256_GCM,data:ReiCA2Yv2DcMs1l3dmqN7Wu1+dKcLzfnRL5TqOIODtz5tknpZAY0qbKWtyidf0s9VEChEgr+M+oCK1WAnhTt4D822bRJ3yYuSTxu4mhUdL5+NKAhqpabzEyIJs+mdN31RtI6BbUil4tsq4euIqIXXn8y3R8IOuvrmZzNLlN9P1Q=,iv:MzdJkFTYj+jxa0llc3BmLtgZrpOPbTxOeCJMPjeo60o=,tag:qBHzKRVfwIBoLTlWiMYAng==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.7.3
