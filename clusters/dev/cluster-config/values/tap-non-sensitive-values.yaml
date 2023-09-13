@@ -52,10 +52,6 @@ tap_install:
         namespace: default
         secretName: default-cert
 
-    appliveview_connector:
-      activateAppLiveViewSecureAccessControl: false
-      activateSensitiveOperations: true
-
     cartographer:
       cartographer:
         concurrency:
