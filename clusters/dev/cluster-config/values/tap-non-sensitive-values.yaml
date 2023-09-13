@@ -46,13 +46,12 @@ tap_install:
         namespace: default
         secret_name: default-cert
 
+    appliveview:
+      ingressEnabled: true
+
     appliveview_connector:
       activateAppLiveViewSecureAccessControl: false
       activateSensitiveOperations: true
-      ingressEnabled: true
-      tls:
-        namespace: default
-        secretName: default-cer
 
     cartographer:
       cartographer:
