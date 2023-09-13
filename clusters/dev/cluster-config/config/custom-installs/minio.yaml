@@ -17,6 +17,14 @@ metadata:
 spec:
   serviceAccountName: sync-sa
   fetch:
+    - inline: 
+        paths:
+          namespace.yaml: |
+            ---
+            apiVersion: v1
+            kind: Namespace
+            metadata:
+              name: minio
     - helmChart:
         name: bitnamicharts/minio
         version: 12.8.4
