@@ -51,6 +51,9 @@ tap_install:
       tls:
         namespace: default
         secretName: default-cert
+    
+    appliveview_connector:
+      activateSensitiveOperations: true
 
     cartographer:
       cartographer:
