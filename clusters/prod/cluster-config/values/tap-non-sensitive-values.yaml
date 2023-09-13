@@ -42,6 +42,7 @@ tap_install:
       backend:
         host: appliveview.dev.h2o.grogscave.net
         ingressEnabled: true
+      activateAppLiveViewSecureAccessControl: false
 
     namespace_provisioner:
       controller: false
