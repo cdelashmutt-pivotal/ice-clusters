@@ -108,6 +108,8 @@ tap_install:
               target: https://github.com/cdelashmutt-pivotal/ice-clusters/blob/main/catalog/catalog-info.yaml
             - type: url
               target: https://github.com/tanzu-end-to-end/tap-workshop/blob/main/install/backstage/catalog-info.yaml
+            - type: url
+              target: https://github.com/cdelashmutt-pivotal/simple-java-web-app-accel/blob/main/catalog/catalog-info.yaml
         customize:
           default_route: '/docs/default/component/getting-started'
         techdocs:
