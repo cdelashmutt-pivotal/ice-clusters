@@ -13,6 +13,6 @@ Want to get your applications into production quickly?  Then follow this guide t
   * `brew install vmware-tanzu/tanzu/tanzu-cli && tanzu plugin install --group vmware-tap/default:v1.6.2`
 
 ## Getting Set Up
-1. [Click here to access the development cluster](https://southtanzuseamericas.tmc.cloud.vmware.com/clusters/dev/attached/attached/overview) for your Business Unit.  Once you have logged in and followed the instructions, come back to step 2.
+1. [Click here to access the development cluster](https://southtanzuseamericas.tmc.cloud.vmware.com/clusters/dev/h2o-4-18242/dev/overview) for your Business Unit.  Once you have logged in and followed the instructions, come back to step 2.
 2. Open your VSCode, and go to the "Tanzu App Accelerator".  Then select the "Tanzu Java Restful Web App" starter, and create a new project.
 3. Open the "README.md" in the generated project to continue getting started with your platform.
