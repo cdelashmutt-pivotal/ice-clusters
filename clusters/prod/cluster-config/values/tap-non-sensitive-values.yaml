@@ -42,7 +42,7 @@ tap_install:
       backend:
         host: appliveview.dev.h2o.grogscave.net
         ingressEnabled: true
-        sslDeactivated: true
+        caCertData: ""
       activateAppLiveViewSecureAccessControl: false
       activateSensitiveOperations: false
 
