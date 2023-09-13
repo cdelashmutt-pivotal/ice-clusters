@@ -19,7 +19,7 @@ spec:
   fetch:
     - helmChart:
         name: minio
-        version: 5.0.13
+        version: 12.8.4
         repository:
           url: oci://registry-1.docker.io/bitnamicharts/minio
           secretRef:
