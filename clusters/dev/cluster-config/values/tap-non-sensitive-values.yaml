@@ -48,6 +48,9 @@ tap_install:
 
     appliveview:
       ingressEnabled: true
+      tls:
+        namespace: default
+        secretName: default-cert
 
     appliveview_connector:
       activateAppLiveViewSecureAccessControl: false
