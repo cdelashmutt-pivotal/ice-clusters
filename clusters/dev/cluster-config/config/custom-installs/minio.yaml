@@ -22,8 +22,8 @@ spec:
         version: 5.0.13
         repository:
           url: oci://registry-1.docker.io/bitnamicharts/minio
-        secretRef:
-          name: dockercreds
+          secretRef:
+            name: dockercreds
   template:
     - helmTemplate:
         namespace: minio
