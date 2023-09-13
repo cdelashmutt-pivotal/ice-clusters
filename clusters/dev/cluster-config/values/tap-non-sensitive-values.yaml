@@ -15,6 +15,11 @@ tap_install:
       secrets:
       - name: ootb-testing-scanning-supply-chain-overlay
 
+    base_jammy_stack_lite:
+      buildImage: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/build@sha256:d403158c1677d839d0c89836a898011aba8bf3935915e9d315c668d319e940e3
+      runImage: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/run@sha256:71b69b7035f8d272cf4f8b727430b1acbd153d931caef367583fc3095066526b
+
+
     ceip_policy_disclosed: true
     shared:
       ingress_domain: "dev.h2o.grogscave.net"
