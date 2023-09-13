@@ -40,7 +40,7 @@ tap_install:
 
     appliveview_connector:
       backend:
-        host: appliveview.dev.h2o.grogscave.net
+        host: appliveview-BORK.dev.h2o.grogscave.net
         ingressEnabled: true
       activateAppLiveViewSecureAccessControl: false
       activateSensitiveOperations: false
