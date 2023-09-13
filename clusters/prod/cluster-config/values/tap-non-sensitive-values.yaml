@@ -15,9 +15,7 @@ tap_install:
       kubernetes_distribution: openshift
     supply_chain: basic
 
-    excluded_packages:
-    - crossplane.tanzu.vmware.com
-    
+
     cnrs:
       default_tls_secret: default/default-cert
       domain_template: "{{- .Name}}-{{.Namespace -}}.{{.Domain}}"
