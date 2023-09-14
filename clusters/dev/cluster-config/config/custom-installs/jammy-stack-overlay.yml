@@ -15,8 +15,8 @@ stringData:
       #@overlay/match missing_ok=True
       buildImage:
         #!image: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/build@sha256:d403158c1677d839d0c89836a898011aba8bf3935915e9d315c668d319e940e3
-        image: dev.registry.tanzu.vmware.com/tanzu-base-ubuntu-2204-stack/build@sha256:b4e3b1d68ff10d5190ecdeafc0407bf76706bdc3f2235f85e8803a4a85a8bf80
+        image: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/build@sha256:0cd65bf4d8a8a61b8060c9b2171b35c2406fa002082a6e67bd32a658229b81e1
       #@overlay/match missing_ok=True
       runImage:
         #!image: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/run@sha256:71b69b7035f8d272cf4f8b727430b1acbd153d931caef367583fc3095066526b
-        image: dev.registry.tanzu.vmware.com/tanzu-base-ubuntu-2204-stack/run@sha256:72d30e0638c6e01e23e4f36a33e061dde35cc590c69ae6cfca046d02380bc340
+        image: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/run@sha256:fd7afd8e1ee42237ff0eaa58007958f523a883180bb39fc3af716e03a5b52ead
