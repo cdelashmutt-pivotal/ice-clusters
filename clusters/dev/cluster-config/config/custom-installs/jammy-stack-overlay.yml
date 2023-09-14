@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: jammy-stack-overlay
+  namespace: tap-install
+type: Opaque
+stringData:
+  overlay.yaml: |
+    #@ load("@ytt:overlay", "overlay")
+    #@overlay/match by=overlay.subset({"kind": "ClusterStack"})
+    #@overlay/match by=overlay.subset({"metadata": {"name": "base-jammy"}})
+    ---
+    spec:
+      #@overlay/match missing_ok=True
+      buildImage:
+        image: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/build@sha256:d403158c1677d839d0c89836a898011aba8bf3935915e9d315c668d319e940e3
+      #@overlay/match missing_ok=True
+      runImage:
+        image: registry.pivotal.io/tanzu-base-ubuntu-2204-stack/run@sha256:71b69b7035f8d272cf4f8b727430b1acbd153d931caef367583fc3095066526b
