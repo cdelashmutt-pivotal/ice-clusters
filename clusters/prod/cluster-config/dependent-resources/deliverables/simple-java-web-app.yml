@@ -15,7 +15,7 @@ metadata:
     carto.run/template-kind: ClusterTemplate
     carto.run/template-lifecycle: mutable
     carto.run/workload-name: simple-java-web-app
-    carto.run/workload-namespace: prod
+    carto.run/workload-namespace: dev
   name: simple-java-web-app
   namespace: prod
 spec:
